@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
+  <!-- ==================== GOOGLE SEARCH CONSOLE VERIFICATION ==================== -->
+  <meta name="google-site-verification" content="CohPrJFv-lzelithOIqe6vAf_9GmPLJJ8qFBZ0cilsE" />
+
+  <!-- ==================== WEBSITE FAVICON / ICON ==================== -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" />
+  <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" />
+  <link rel="apple-touch-icon" href="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" />
+
   <!-- ==================== GOOGLE SEO META TAGS ==================== -->
   <title>হিসাব — Hisab Personal Finance & Daily Money Tracker App</title>
   <meta name="description" content="হিসাব (Hisab) হলো একটি সম্পূর্ণ ফ্রি, সুপার-ফাস্ট ও ১০০% নিরাপদ পার্সোনাল ফাইন্যান্স এবং দৈনিক খরচ ও বাকি-দেনার হিসাব রাখার অ্যাপ। Developed by Fahim." />
@@ -24,9 +32,6 @@
   <meta name="twitter:title" content="হিসাব (Hisab) App by Fahim" />
   <meta name="twitter:description" content="সুপার ফাস্ট পার্সোনাল ফাইন্যান্স ট্র্যাকার ও বাজেট প্ল্যানার অ্যাপ।" />
   <meta name="twitter:image" content="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" />
 
   <!-- Google Structured Data (Schema.org JSON-LD) -->
   <script type="application/ld+json">
@@ -179,22 +184,23 @@
       margin-bottom: 50px;
     }
     .btn-main {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      background: linear-gradient(135deg, #10b981, #059669);
       color: white;
-      padding: 14px 28px;
+      padding: 16px 30px;
       border-radius: 14px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
+      font-weight: 700;
+      font-size: 1.05rem;
       display: flex;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 8px 24px rgba(37,99,235,0.3);
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
       transition: transform 0.2s, box-shadow 0.2s;
+      scroll-margin-top: 100px; /* ফোকাস নিখুঁত রাখার জন্য */
     }
     .btn-main:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(37,99,235,0.4);
+      box-shadow: 0 12px 28px rgba(16, 185, 129, 0.45);
     }
     .btn-secondary {
       background: white;
@@ -325,7 +331,7 @@
       box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
     }
 
-    /* SEO Tags Keywords Section (Search Console Friendly) */
+    /* SEO Tags Keywords Section */
     .seo-keywords {
       background: #f1f5f9;
       padding: 30px;
@@ -360,11 +366,12 @@
   <!-- Top Navbar -->
   <header class="navbar">
     <div class="container" style="display:flex; justify-content:space-between; width:100%;">
-      <a href="hisab.apk" class="brand">
+      <a href="hisab.apk" download="Hisab.apk" class="brand">
         <img src="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" alt="Hisab App Logo">
         <span>Hisab • হিসাব</span>
       </a>
-      <a href="#download" class="nav-btn">ডাউনলোড করুন</a>
+      <!-- ওপরের বাটনে ক্লিক করলে সরাসরি নিচে ২ নম্বর বাটনটির কাছে নিয়ে যাবে -->
+      <a href="#directDownloadBtn" class="nav-btn">ডাউনলোড করুন</a>
     </div>
   </header>
 
@@ -378,12 +385,12 @@
       </p>
 
       <!-- Action Buttons -->
-      <div class="btn-group" id="download">
-        <!-- Direct App Link (যেখানে আপনার মূল অ্যাপ হোস্ট করা) -->
-        <a href="hisab.apk" download="Hisab.apk" class="btn-main">
-  <svg style="width:22px;height:22px;fill:currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-  APK ডাউনলোড করুন (Direct Download)
-</a>
+      <div class="btn-group">
+        <!-- Direct APK Download Link (এখানে id="directDownloadBtn" দেওয়া হয়েছে) -->
+        <a href="hisab.apk" download="Hisab.apk" class="btn-main" id="directDownloadBtn">
+          <svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+          APK ডাউনলোড করুন (Direct Download)
+        </a>
         <a href="https://wa.me/8801976886916?text=Hi%20Fahim,%20I%20want%20Hisab%20App%20APK" target="_blank" class="btn-secondary">
           <svg style="width:20px;height:20px;fill:#25D366" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
           APK রিকোয়েস্ট (WhatsApp)
@@ -453,21 +460,21 @@
       </a>
     </section>
 
-    <!-- SEO Search Engine Keywords Section (Search Console-এ খুব দ্রুত র‍্যাংক করাতে সাহায্য করবে) -->
+    <!-- SEO Search Engine Keywords Section -->
     <section class="seo-keywords">
       <h4>🔍 Popular Search Tags & Keywords:</h4>
       <p>
-        <strong>English Keywords:</strong> Hisab App, Best Expense Tracker Bangladesh, Personal Finance App, Daily Expense Diary, Offline Money Manager, Income Expense Tracker, Taka Hisab App, Budget Planner BD, Free Ledger App, Due Tracker APK, Fahim Developer Apps.
+        <strong>English Keywords:</strong> Hisab App, hisabkoro, Hisab APK Download, Best Expense Tracker Bangladesh, Personal Finance App, Daily Expense Diary, Offline Money Manager, Income Expense Tracker, Taka Hisab App, Budget Planner BD, Free Ledger App, Due Tracker APK, Fahim Developer Apps.
       </p>
       <p style="margin-top: 6px;">
-        <strong>বাংলা কি-ওয়ার্ড:</strong> হিসাব অ্যাপ, আয় ব্যয় খাতা, খরচের খাতা, প্রতিদিনের টাকার হিসাব, বাকি খাতা অ্যাপ, পার্সোনাল ফাইন্যান্স বাংলাদেশ, দেনা পাওনার হিসাব, ফ্রি হিসাব খাতা, অফলাইন মানি ট্র্যাকার, ফাহিম হিসাব।
+        <strong>বাংলা কি-ওয়ার্ড:</strong> হিসাব অ্যাপ, hisabkoro, আয় ব্যয় খাতা, খরচের খাতা, প্রতিদিনের টাকার হিসাব, বাকি খাতা অ্যাপ, পার্সোনাল ফাইন্যান্স বাংলাদেশ, দেনা পাওনার হিসাব, ফ্রি হিসাব খাতা, অফলাইন মানি ট্র্যাকার, ফাহিম হিসাব।
       </p>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <p>© 2025 Hisab App. Developed with ❤️ by <b>Fahim</b>. All Rights Reserved.</p>
+      <p>© 2025 Hisab App. <b>Developed by Fahim</b>. All Rights Reserved.</p>
     </div>
   </footer>
 
