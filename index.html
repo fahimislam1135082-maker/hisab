@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  
+  <!-- ==================== GOOGLE SEO META TAGS ==================== -->
+  <title>হিসাব — Hisab Personal Finance & Daily Money Tracker App</title>
+  <meta name="description" content="হিসাব (Hisab) হলো একটি সম্পূর্ণ ফ্রি, সুপার-ফাস্ট ও ১০০% নিরাপদ পার্সোনাল ফাইন্যান্স এবং দৈনিক খরচ ও বাকি-দেনার হিসাব রাখার অ্যাপ। Developed by Fahim." />
+  <meta name="keywords" content="Hisab, Hisab App, Personal Finance App, Daily Expense Tracker, Money Management App, Budget Planner, Due Tracker, দৈনিক হিসাব অ্যাপ, আয় ব্যয় খাতা, খরচের হিসাব, বাকি খাতার অ্যাপ, পার্সোনাল ফাইন্যান্স, fahim hisab app" />
+  <meta name="author" content="Fahim" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://your-domain.vercel.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.vercel.app/" />
+  <meta property="og:title" content="হিসাব (Hisab) — আপনার প্রতিদিনের আর্থিক ব্যবস্থাপনার বিশ্বস্ত সঙ্গী" />
+  <meta property="og:description" content="সহজে আয়, ব্যয়, বাকি ও মাসিক বাজেটের হিসাব রাখুন সম্পূর্ণ নিরাপদে আপনার নিজস্ব ডিভাইসে।" />
+  <meta property="og:image" content="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="হিসাব (Hisab) App by Fahim" />
+  <meta name="twitter:description" content="সুপার ফাস্ট পার্সোনাল ফাইন্যান্স ট্র্যাকার ও বাজেট প্ল্যানার অ্যাপ।" />
+  <meta name="twitter:image" content="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" />
+
+  <!-- Google Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Hisab - হিসাব",
+    "operatingSystem": "Android, iOS, Web",
+    "applicationCategory": "FinanceApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BDT"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Fahim",
+      "telephone": "+8801976886916"
+    },
+    "description": "A lightweight, secure, and offline personal finance and expense tracker app."
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg: #f8fafc;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --income: #059669;
+      --expense: #e11d48;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.2);
+    }
+    .brand span {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .nav-btn {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 70px 0 50px;
+    }
+    .badge-pill {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid #bfdbfe;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 18px;
+      color: #0f172a;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #2563eb, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    /* Action Buttons */
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+    .btn-main {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(37,99,235,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37,99,235,0.4);
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--text-main);
+      padding: 14px 26px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #f1f5f9;
+    }
+
+    /* App Mockup Preview */
+    .mockup-container {
+      max-width: 360px;
+      margin: 0 auto 80px;
+      background: #000;
+      padding: 12px;
+      border-radius: 40px;
+      box-shadow: 0 25px 60px -15px rgba(0,0,0,0.25);
+      border: 4px solid #1e293b;
+    }
+    .mockup-screen {
+      background: #f8fafc;
+      border-radius: 30px;
+      overflow: hidden;
+      aspect-ratio: 9/19;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #334155;
+    }
+    .mockup-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Features Grid */
+    .section-head {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-head h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .section-head p {
+      color: var(--text-muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      padding: 26px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      background: #eff6ff;
+    }
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Developer Section */
+    .dev-banner {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      border-radius: 28px;
+      padding: 45px 30px;
+      text-align: center;
+      margin-bottom: 70px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+    .dev-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      margin: 0 auto 16px;
+      overflow: hidden;
+    }
+    .dev-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+    }
+
+    /* SEO Tags Keywords Section (Search Console Friendly) */
+    .seo-keywords {
+      background: #f1f5f9;
+      padding: 30px;
+      border-radius: 20px;
+      margin-bottom: 50px;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.8;
+    }
+    .seo-keywords h4 {
+      color: #334155;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="container" style="display:flex; justify-content:space-between; width:100%;">
+      <a href="#" class="brand">
+        <img src="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" alt="Hisab App Logo">
+        <span>Hisab • হিসাব</span>
+      </a>
+      <a href="#download" class="nav-btn">ডাউনলোড করুন</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge-pill">✨ ১০০% ফ্রি ও নিরাপদ পার্সোনাল ফাইন্যান্স অ্যাপ</div>
+      <h1>প্রতিদিনের আয় ও খরচের নির্ভুল সমাধান<br><span>হিসাব (Hisab) অ্যাপ</span></h1>
+      <p>
+        কোনো ইন্টারনেটের প্রয়োজন নেই! আপনার ফোন থেকেই সহজে ট্র্যাক করুন দৈনিক খরচ, আয়, পাওনা-দেনা ও বাজেট প্ল্যানিং।
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="btn-group" id="download">
+        <!-- Direct App Link (যেখানে আপনার মূল অ্যাপ হোস্ট করা) -->
+        <a href="https://your-hisab-app.vercel.app" target="_blank" class="btn-main">
+          <svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          অ্যাপ ওপেন করুন (Web App)
+        </a>
+        <a href="https://wa.me/8801976886916?text=Hi%20Fahim,%20I%20want%20Hisab%20App%20APK" target="_blank" class="btn-secondary">
+          <svg style="width:20px;height:20px;fill:#25D366" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          APK রিকোয়েস্ট (WhatsApp)
+        </a>
+      </div>
+
+      <!-- App Preview Mockup -->
+      <div class="mockup-container">
+        <div class="mockup-screen">
+          <img class="mockup-img" src="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" alt="Hisab App Preview">
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section>
+      <div class="section-head">
+        <h2>কেন হিসাব অ্যাপটি আপনার জন্য সেরা?</h2>
+        <p>সহজ, দ্রুত এবং সম্পূর্ণরূপে আপনার নিয়ন্ত্রণে পরিচালিত ফিচারসমূহ</p>
+      </div>
+
+      <div class="grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>সুপার ফাস্ট ও অফলাইন</h3>
+          <p>কোনো ইন্টারনেটের প্রয়োজন নেই। আপনার সব ডেটা আপনার ডিভাইসেই ১০০% নিরাপদে সংরক্ষিত থাকে।</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>মাসিক বাজেট ও সেভিংস গোল</h3>
+          <p>প্রতি মাসে খরচের সীমা নির্ধারণ করুন এবং আপনার পছন্দের লক্ষ্য অনুযায়ী সঞ্চয় জমা করুন।</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>বাকি ও দেনার খাতা</h3>
+          <p>কে কত টাকা পাবে বা আপনি কার কাছে কত দেনা আছেন তা আংশিক পরিশোধের তারিখসহ সংরক্ষণ করুন।</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>রিকারিং খরচ (অটো বিল)</h3>
+          <p>বাসা ভাড়া বা ইন্টারনেট বিলের মতো নিয়মিত মাসিক খরচ প্রতি মাসের নির্দিষ্ট দিনে স্বয়ংক্রিয়ভাবে হিসাব করুন।</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>ভিজ্যুয়াল গ্রাফ ও রিপোর্ট</h3>
+          <p>দৈনিক, সাপ্তাহিক ও মাসিক চার্টের মাধ্যমে আপনার খরচের অভ্যাস এক নজরে বুঝে নিন।</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3>PIN কোড ও অ্যাপ লক</h3>
+          <p>আপনার ব্যক্তিগত আর্থিক তথ্য অন্যের হাত থেকে গোপন রাখতে পিন লক সুবিধা রয়েছে।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Profile Section -->
+    <section class="dev-banner">
+      <div class="dev-img">
+        <img src="https://i.ibb.co/JRjkVrpd/file-00000000b2548208899cc75e9e27fd37.png" alt="Developer Fahim">
+      </div>
+      <h2>Developed by Fahim</h2>
+      <p style="max-width:550px; margin: 8px auto 0; color:#cbd5e1; font-size: 0.95rem;">
+        অ্যাপ সম্পর্কিত যেকোনো সমস্যা, আপডেট রিকোয়েস্ট অথবা সরাসরি APK ফাইলের জন্য নিচে ক্লিক করে যোগাযোগ করুন।
+      </p>
+      <a href="https://wa.me/8801976886916?text=Hi%20Fahim,%20I%20am%20interested%20in%20Hisab%20App" target="_blank" class="whatsapp-btn">
+        WhatsApp: 01976886916
+      </a>
+    </section>
+
+    <!-- SEO Search Engine Keywords Section (Search Console-এ খুব দ্রুত র‍্যাংক করাতে সাহায্য করবে) -->
+    <section class="seo-keywords">
+      <h4>🔍 Popular Search Tags & Keywords:</h4>
+      <p>
+        <strong>English Keywords:</strong> Hisab App, Best Expense Tracker Bangladesh, Personal Finance App, Daily Expense Diary, Offline Money Manager, Income Expense Tracker, Taka Hisab App, Budget Planner BD, Free Ledger App, Due Tracker APK, Fahim Developer Apps.
+      </p>
+      <p style="margin-top: 6px;">
+        <strong>বাংলা কি-ওয়ার্ড:</strong> হিসাব অ্যাপ, আয় ব্যয় খাতা, খরচের খাতা, প্রতিদিনের টাকার হিসাব, বাকি খাতা অ্যাপ, পার্সোনাল ফাইন্যান্স বাংলাদেশ, দেনা পাওনার হিসাব, ফ্রি হিসাব খাতা, অফলাইন মানি ট্র্যাকার, ফাহিম হিসাব।
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Hisab App. Developed with ❤️ by <b>Fahim</b>. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
